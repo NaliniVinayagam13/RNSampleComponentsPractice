@@ -33,13 +33,13 @@ class ButtonComponentExample extends Component {
             {this.state?.enteredText}  
             </Text>
 
-            <TextInput keyboardType='email-address' scrollEnabled = {true} style = {styles.txtInputSTyle}
+            <TextInput keyboardType='email-address' scrollEnabled = {true} style = {styles.txtInputStyle}
             placeholder = "Email id"
             autoCapitalize='sentences'
             onChangeText={this.setEmail}
             />
 
-            <TextInput secureTextEntry = {true} style = {this.styles.txtInputSTyle}
+            <TextInput secureTextEntry = {true} style = {styles.txtInputStyle}
             placeholder = "Password"
             onChangeText={this.setPwd}
             />
@@ -55,7 +55,7 @@ class ButtonComponentExample extends Component {
 
            <TouchableHighlight  onPress={() => this.login(this.loginStateModel.emailId, this.loginStateModel.pwd)}>
           <View style = {{  alignItems:'center'}}>
-           <Text style = {this.styles.buttonStyle}>
+           <Text style = {styles.buttonStyle}>
             Touchable Highlight</Text>
             </View>
            </TouchableHighlight>
@@ -63,12 +63,12 @@ class ButtonComponentExample extends Component {
         </View>
         )
     }
-
-     styles = StyleSheet.create({
-     txtInputSTyle : {
+}
+    const styles = StyleSheet.create({
+     txtInputStyle : {
     borderColor: 'brown', borderWidth:2, margin: 10, padding: 10, 
     fontSize: 14, color: 'green', 
-    alignContent: 'flex-start', textAlignVertical: 'top'
+    alignContent: 'flex-start', textAlignVertical: 'center'
      },
 
      buttonStyle: {
@@ -77,6 +77,6 @@ class ButtonComponentExample extends Component {
         padding:10, textAlign: 'center'
      }
      });
-}
+
 
 export default ButtonComponentExample;
