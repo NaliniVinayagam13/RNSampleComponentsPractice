@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import {Button, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, TouchableOpacityBase, View} from 'react-native';
+import {Button, SafeAreaView, StatusBar, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, TouchableOpacityBase, View} from 'react-native';
 
-class ButtonComponentExample extends Component {
+class StatusBarComponentExample extends Component {
 
     loginStateModel = {
         emailId : '',
@@ -21,7 +21,8 @@ class ButtonComponentExample extends Component {
     }
     render() {
         return(
-       <View style={{flex: 1, margin: 10}} >
+       <SafeAreaView style={{flex: 1, margin: 10}} >
+        <StatusBar hidden = {false} backgroundColor = 'purple' barStyle={'default'} ></StatusBar>
         <Text style = {{margin: 20, fontSize: 25, color:'purple', textAlign: 'center'}}>Button Example with StyleSheet</Text>
 
             <TextInput multiline = {true} keyboardType='email-address' scrollEnabled = {true} numberOfLines = {3} style = {{ display: 'none', height:75, borderColor: 'orange', borderWidth:2, margin: 10, padding: 10, fontSize: 14, color: 'green', alignContent: 'flex-start', textAlignVertical: 'top'}}
@@ -54,13 +55,13 @@ class ButtonComponentExample extends Component {
            </TouchableOpacity>
 
            <TouchableHighlight  onPress={() => this.login(this.loginStateModel.emailId, this.loginStateModel.pwd)}>
-          <View style = {{  alignItems:'center'}}>
+          <View style = {{alignItems:'center'}}>
            <Text style = {styles.buttonStyle}>
             Touchable Highlight</Text>
             </View>
            </TouchableHighlight>
            
-        </View>
+        </SafeAreaView>
         )
     }
 }
@@ -79,4 +80,4 @@ class ButtonComponentExample extends Component {
      });
 
 
-export default ButtonComponentExample;
+export default StatusBarComponentExample;
