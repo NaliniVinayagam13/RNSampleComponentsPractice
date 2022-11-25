@@ -6,9 +6,6 @@ class PropsClassComponentExample extends Component {
     render() {
         return (
             <View style={{alignItems: 'center' }} >
-                <Text style={styles.headingStyle}>Props Example</Text>
-
-
                 <Text style={styles.contentStyle}>
                     Hello.. {this.props.name}!
                 </Text>
@@ -21,6 +18,8 @@ class PropsParentClass extends Component {
     render() {
         return (
             <View>
+                <Text style={styles.headingStyle}>Props Example</Text>
+
                 <PropsClassComponentExample name='This is a Sample 1' />
                 <PropsClassComponentExample name='This is a Sample 2' />
                 <PropsClassComponentExample name='This is a Sample 3' />
